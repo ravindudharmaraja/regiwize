@@ -9,7 +9,7 @@ Before you begin, ensure you have met the following requirements:
 
 1. Clone the repository:
 
-   git clone https://github.com/yourusername/your-repo.git
+   git clone https://github.com/ravindudharmaraja/regiwize
 
 2. Change into the project directory:
 
