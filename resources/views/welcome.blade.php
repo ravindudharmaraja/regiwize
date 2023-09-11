@@ -22,7 +22,7 @@
                         <small><i class="fa fa-smile-o"></i></small>
                         <div class="text">
                             <h2>Launch and Manage your LLC in the US</h2>
-                            <p>Form a new company from scratch or onboard your existing US company. Manage compliance essentials in one place.</p>
+                            <p class="p">Form a new company from scratch or onboard your existing US company. Manage compliance essentials in one place.</p>
                         </div>
                         <div class="custom-container" onclick="navigateToNewStep1()">
                             <i class="fas fa-landmark fa-3x icon-with-border"></i>
@@ -37,11 +37,7 @@
                                 <div class="title">MANAGE MY EXISTING LLC</div>
                                 <i class="fas fa-arrow-right arrow-icon"></i>
                             </div>
-                        </div>
-
-                        
-                       
-                        
+                        </div>        
             </div>
         </div>
     </div>

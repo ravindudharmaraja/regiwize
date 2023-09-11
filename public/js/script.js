@@ -1,3 +1,5 @@
+
+
 var next_click=document.querySelectorAll(".next_button");
 var main_form=document.querySelectorAll(".main");
 var step_list = document.querySelectorAll(".progress-bar li");

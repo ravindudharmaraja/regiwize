@@ -1,7 +1,9 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
+    
     <div class="card">
+    <img  class="img1" src="/image/logo2.png" alt="Regewize Logo">
         <div class="form">
             <div class="left-side">
                 <div class="left-heading">
@@ -25,25 +27,26 @@
                         </div>
                         <div class="input-text">
                             <div class="input-div">
-                                <input type="text" required require id="email">
+                                <input type="text"  required require id="email">
                                 <span>Email</span>
                             </div>
                             <div class="input-div"> 
                             <div class="input-div">
-                                <input type="text" required require id="password">
+                                <input type="password" required require id="password">
                                 <span>Password</span>
                             </div>
                             </div>
                         </div>
                         <div class="buttons">
-                        <button class="next_button" onclick="registerUser();">Get Started</button>
-                        <span class="already-account" onclick="navigateToExistingStep1()"><a href="#">I have an existing US company</a></span>
+                        <button class="next_button" onclick="registerNewUser();">Register</button>
+                        <span class="already-account" onclick="navigateToLogin();"><a href="#">I have an account</a></span>
                         </div>
                     </div>     
                 </div>
             </div>
         </div>
     </div>
+    <!-- <div id="loadingSpinner"></div> -->
 <!--               
     <script>
     

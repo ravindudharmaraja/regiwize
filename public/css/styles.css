@@ -20,6 +20,7 @@
     font-family: 'Poppins', sans-serif;
     height: 619px;
     
+    
     /* height:500px;
     width:800px;
     background-color:#fff;
@@ -32,6 +33,14 @@
     height:100%;
     
     display:flex;
+}
+.container .card .img {
+    display: none;
+    margin-left: auto;
+}
+.container .card .img1 {
+    display: none;
+    margin-left: auto;
 }
 .container .card .left-side {
     width: 35%;
@@ -353,9 +362,9 @@ figure.snip1157 .author h5 span {
 /*left-side-end*/
 .container .card .right-side{
     width:65%;
-    background-color: #efefef42;
+    background-color: #ffffff;
     height:100%;
-  border-radius:20px;
+  border-radius:0px;
 }
 /*right-side-start*/
 .main{
@@ -372,7 +381,7 @@ figure.snip1157 .author h5 span {
     padding:40px;
     padding-top: 10%;
     padding-left: 10%;
-    background-color: #efefef42;
+    background-color: #ffffff;
 }
 .main small{
     display:flex;
@@ -440,6 +449,27 @@ input[type="number"]{
     box-sizing:border-box;
     padding:0px 10px;
 }
+input[type="business"]{
+    width:100%;
+    height:80px;
+    border:none;
+    outline:0;
+    border-radius:5px;
+    border:1px solid #cbced4;
+    gap:20px;
+    box-sizing:border-box;
+    padding:0px 10px;
+}
+input[type="password"] {
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #cbced4;
+    box-sizing: border-box;
+    padding: 0px 10px;
+}
 select{
     width:100%;
     height:40px;
@@ -450,6 +480,7 @@ select{
     gap:20px;
     box-sizing:border-box;
     padding:0px 10px;
+    background-color: #ffffff;
 }
 .input-text .input-div span{
     position:absolute;
@@ -463,6 +494,10 @@ select{
     left:6px;
     font-size:10px;
     font-weight:600; 
+    
+}
+input:focus {
+    border-color: #9f55e0;
 }
 
 .input-div span{
@@ -476,6 +511,16 @@ select{
     border:none;
     border-radius:5px;
     background-color:#6f35a3;
+    font-size:12px;
+    color:#fff;
+    cursor:pointer;
+}
+.delete-button{
+    height:40px;
+    width:100px;
+    border:none;
+    border-radius:5px;
+    background-color:#eb0909;
     font-size:12px;
     color:#fff;
     cursor:pointer;
@@ -639,6 +684,24 @@ select{
   }
 }
 
+#loadingSpinner {
+    position: fixed;
+    top: 50%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    border-top: 3px solid #007bff; /* Blue color for the spinner */
+    animation: spin 1s linear infinite;
+    z-index: 9999;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
 
 
 
@@ -646,16 +709,26 @@ select{
 
 
 
+.warning {
+    border: 1px solid #ff0000 !important;
+    position: relative; /* Add this to make positioning relative */
+}
 
-
-.warning{
-    border:1px solid #a900ff !important;
+/* Style the warning message */
+.warning::after {
+    content: "This field requires attention"; /* Your custom warning message */
+    color: #ff0000;
+    display: block;
+    position: absolute; /* Position the message relative to its parent .warning element */
+    top: 100%; /* Position the message below the input field */
+    left: 0; /* Align the message with the left edge of the input field */
 }
 
 
 /*right-side-end*/
-@media (max-width:750px) {
+@media (max-width:1000px) {
     .container{
+
         height:scroll;
         justify-content: center;
         display: flex
@@ -665,6 +738,16 @@ select{
         max-width: 350px;
         height:auto !important;
         margin:30px 0;
+    }
+    .container .card .img1{
+        display: flex;
+        width: 200px; 
+        margin-left: 18%;    
+    }
+    .container .card .img{
+        display: flex;
+        width: 200px; 
+        margin: auto;    
     }
     .container .card .right-side {
      width:100%;
@@ -689,5 +772,29 @@ select{
     figure.snip1157 {
         display: none;
     }
+    #loadingSpinner {
+        left: 50%;
+    }
+    .text{
+        text-align: center;
+    }
+    .text p{
+       display: none;
+    }
+    .main small{
+        display:none;
+    }
+    .buttons button{
+        width:330px;
+    }
+    .already-account a {
+        display: block;
+        margin-left: 25%;
+        margin-top: 10px;
+    }
+    .main{
+        padding:10px;
+    }
+    
 }
 

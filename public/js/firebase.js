@@ -21,7 +21,12 @@ const auth = firebase.auth();
 const database = firebase.database();
 
 //setup register function
-function registerUser() {
+function registerNewUser() {
+    // Show the loading spinner
+    var loadingSpinner = document.createElement('div');
+            loadingSpinner.id = 'loadingSpinner';
+            document.body.appendChild(loadingSpinner);
+
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
 
@@ -33,7 +38,6 @@ function registerUser() {
             var user_data = {
                 email: email,
             }
-            
 
             database_ref.child('users/' + user.uid).set(user_data)
                 .then(function() {
@@ -43,6 +47,7 @@ function registerUser() {
                     // Sign in the user after successful registration
                     auth.signInWithEmailAndPassword(email, password)
                         .then(function() {
+                            // User signed in after registration
                             console.log("User signed in after registration.");
                             // Redirect to the next page
                             navigateToNewStep2();
@@ -53,6 +58,11 @@ function registerUser() {
                             alert(errorMessage);
                         });
                 })
+                .catch(function(error) {
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                    alert(errorMessage);
+                });
 
         })
         .catch(function(error) {
@@ -61,10 +71,70 @@ function registerUser() {
             alert(errorMessage);
         });
 }
+
 function navigateToNewStep2() {
+    // Hide the loading spinner just before redirecting
+    document.getElementById("loadingSpinner").style.display = "none";
     window.location.href = "/new/register"; // Replace with the URL of the next page
 }
 
+//setup register function
+function registerExistingUser() {
+    // Show the loading spinner
+    var loadingSpinner = document.createElement('div');
+            loadingSpinner.id = 'loadingSpinner';
+            document.body.appendChild(loadingSpinner);
+
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+
+    auth.createUserWithEmailAndPassword(email, password)
+        .then(function() {
+            var user = auth.currentUser;
+            var database_ref = database.ref();
+
+            var user_data = {
+                email: email,
+            }
+
+            database_ref.child('users/' + user.uid).set(user_data)
+                .then(function() {
+                    // User data saved successfully
+                    console.log("User data saved to Firebase.");
+
+                    // Sign in the user after successful registration
+                    auth.signInWithEmailAndPassword(email, password)
+                        .then(function() {
+                            // User signed in after registration
+                            console.log("User signed in after registration.");
+                            // Redirect to the next page
+                            navigateToExistingStep2();
+                        })
+                        .catch(function(error) {
+                            var errorCode = error.code;
+                            var errorMessage = error.message;
+                            alert(errorMessage);
+                        });
+                })
+                .catch(function(error) {
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                    alert(errorMessage);
+                });
+
+        })
+        .catch(function(error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            alert(errorMessage);
+        });
+}
+
+function navigateToExistingStep2() {
+    // Hide the loading spinner just before redirecting
+    document.getElementById("loadingSpinner").style.display = "none";
+    window.location.href = "/existing/register"; // Replace with the URL of the next page
+}
 
 
 

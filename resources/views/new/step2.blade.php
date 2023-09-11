@@ -1,7 +1,9 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
+
     <div class="card">
+    <img  class="img" src="/image/logo2.png" alt="Regewize Logo">
         <div class="form">
             <div class="left-side">
                 <div class="left-heading">
@@ -27,7 +29,7 @@
             </div>
             <div class="right-side">
                 <div class="main active">
-                        <small><i class="fa fa-smile-o"></i></small>
+                        <small><i class="fas fa-smile-o"></i></small>
                         <div class="text">
                             <h2>Choose The State</h2>
                             <p>Select the state in which you want to incorporate your new company.</p>
@@ -52,7 +54,7 @@
                             <button class="next_button">Next Step</button>
                         </div>
                     </div>
-                    <div class="main ">
+                    <div class="main">
                         <small><i class="fa fa-smile-o"></i></small>
                         <div class="text">
                             <h2>Tell Us About Your company</h2>
@@ -64,25 +66,25 @@
                                 <span>Company Name</span>
                             </div>
                             <div class="input-div"> 
-                            <div class="input-div">
-                                <select id="company_type">
-                                    <option>Select Type</option>
-                                    <option>Limited Liability Company</option>
-                                    <option>LLC</option>
-                                    <option>L.L.C.</option>
-                                </select>
-                            </div>
+                                <div class="input-div">
+                                    <select id="company_type" required require>
+                                        <option disabled selected>Select Type</option>
+                                        <option>Limited Liability Company</option>
+                                        <option>LLC</option>
+                                        <option>L.L.C.</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                         <div class="input-text">
                             <div class="input-div">
-                                <input type="text" required require id="website">
+                                <input type="text" required  id="website">
                                 <span>Website</span>
                             </div>
                             <div class="input-div">
                             <div class="input-div">
                                 <select id="industry">
-                                    <option>Select Industry</option>
+                                    <option disabled selected>Select Industry</option>
                                     <option>Accounting and tax</option>
                                     <option>Accounting and tax preparation</option>
                                     <option>Advertising</option>
@@ -112,7 +114,7 @@
                         </div>
                         <div class="input-text">
                             <div class="input-div">
-                                <input type="text" required require id="bussiness">
+                                <input type="business" required require id="bussiness">
                                 <span>Business Description</span>  
                             </div>                       
                         </div>
@@ -235,7 +237,7 @@
                         <div class="input-text">
                         <div class="input-div">
                                 <select id="country">
-                                    <option>Select Country</option>
+                                    <option disabled selected>Select Country</option>
                                     <option>India</option>
                                     <option>France</option>
                                     <option>UK</option>
@@ -251,7 +253,7 @@
                             <div class="input-div"> 
                             <div class="input-div">
                                 <select id="region">
-                                    <option>Select State/Regiom</option>
+                                    <option disabled selected>Select State/Regiom</option>
                                     <option>India</option>
                                     <option>France</option>
                                     <option>UK</option>
@@ -284,7 +286,7 @@
                         </div>    
                         <div class="buttons button_space">
                             <button class="back_button">Back</button>
-                            <button class="next_button" onclick="saveToFirebasePage2()">Register</button>
+                            <button class="next_button" onclick="saveToFirebasePage2()">Save</button>
                         </div>
                     </div>
                     <!-- <div class="main ">

@@ -17,9 +17,9 @@ use App\Http\Controllers\FirebaseController;
 Route::get('/', function () {
     return view('welcome');
 });
-// Route::get('/register', function () {
-//     return view('new.step2');
-// });
+Route::get('/login', function () {
+    return view('login');
+});
 
 Route::prefix('new')->group(function () {
     Route::get('/', function () {

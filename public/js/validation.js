@@ -1,3 +1,6 @@
+function navigateToLogin() {
+    window.location.href = "/login";
+}
 function navigateToNewStep1() {
     window.location.href = "/new";
 }
@@ -65,18 +68,48 @@ function addOwnerFields() {
         // Clone and append company owner input fields
         const newCompanyOwner = companyOwnerTemplate.cloneNode(true);
         newCompanyOwner.style.display = "block";
+
+        // Create a delete button for the company owner field
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.classList.add("delete-button");
+
+        // Add a click event listener to the delete button
+        deleteButton.addEventListener("click", function() {
+            ownerList.removeChild(newCompanyOwner);
+        });
+
+        // Append the delete button to the newCompanyOwner field
+        newCompanyOwner.appendChild(deleteButton);
+
         ownerList.appendChild(newCompanyOwner);
     } else {
         // Clone and append individual owner input fields
         const newIndividualOwner = individualOwnerTemplate.cloneNode(true);
         newIndividualOwner.style.display = "block";
+
+        // Create a delete button for the individual owner field
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.classList.add("delete-button");
+
+        // Add a click event listener to the delete button
+        deleteButton.addEventListener("click", function() {
+            ownerList.removeChild(newIndividualOwner);
+        });
+
+        // Append the delete button to the newIndividualOwner field
+        newIndividualOwner.appendChild(deleteButton);
+
         ownerList.appendChild(newIndividualOwner);
     }
-}
+} 
 
 // Event listener for the "Add" button
 const addButton = document.querySelector(".add_button");
 addButton.addEventListener("click", addOwnerFields);
+
+
 
 function showSSNField() {
     const ssnField = document.querySelector(".ssn-field");

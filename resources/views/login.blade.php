@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
-    
     <div class="card">
     <img  class="img1" src="/image/logo2.png" alt="Regewize Logo">
         <div class="form">
@@ -11,11 +10,11 @@
                     <!-- <h3>Regewize</h3> -->
                 </div> 
                 <div class="left-text">
-                    <h3>Manage your business with StartGlobal</h3>
+                    <h3>A few clicks away from creating your company</h3>
                 </div> 
                 <br> 
                 <div>
-                    <p class="left-p" >Start your company in minutes. Save time and money.</p>
+                    <p class="left-p" >Manage your business in minutes. Save time and money.</p>
                 </div> 
             </div>
             <div class="right-side">    
@@ -27,19 +26,19 @@
                         </div>
                         <div class="input-text">
                             <div class="input-div">
-                                <input type="text"  required require id="email">
+                                <input type="text" required require id="email">
                                 <span>Email</span>
                             </div>
                             <div class="input-div"> 
                             <div class="input-div">
-                                <input type="password" required require id="password">
+                                <input type="text" required require id="password">
                                 <span>Password</span>
                             </div>
                             </div>
                         </div>
                         <div class="buttons">
-                        <button class="next_button" onclick="registerExistingUser();">Register</button>
-                        <span class="already-account" onclick="navigateToLogin();"><a href="#">I have an account</a></span>
+                        <button class="next_button" onclick="registerUser();">Login</button>
+                        <span class="already-account" onclick="navigateToNewStep1();"><a href="#">I haven't an account</a></span>
                         </div>
                     </div>     
                 </div>
@@ -47,6 +46,6 @@
         </div>
     </div>
 
-@endsection          
 
+@endsection          
 

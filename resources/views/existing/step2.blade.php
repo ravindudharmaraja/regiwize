@@ -1,7 +1,9 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
+
     <div class="card">
+    <img  class="img" src="/image/logo2.png" alt="Regewize Logo">
         <div class="form">
             <div class="left-side">
                 <div class="left-heading">
@@ -15,7 +17,6 @@
                     <p class="step-number-content d-none">Who's in charge?</p>
                     <p class="step-number-content d-none">Add your profile piccture and let companies find youy fast.</p>
                     <p class="step-number-content d-none">Add your profile piccture and let companies find youy fast.</p>
-                    <p class="step-number-content d-none">Add your profile piccture and let companies find youy fast.</p>
                 </div>
                 <ul class="progress-bar">
                     <li class="active">State</li>
@@ -23,19 +24,19 @@
                     <li>Owners</li>
                     <li>Personal Details</li>
                     <li>Address Details</li>
-                    <li>Create Your Account</li>
+                    <!-- <li>Create Your Account</li> -->
                 </ul>   
             </div>
             <div class="right-side">
                 <div class="main active">
-                        <small><i class="fa fa-smile-o"></i></small>
+                        <small><i class="fas fa-smile-o"></i></small>
                         <div class="text">
                             <h2>Choose The State</h2>
                             <p>Select the state in which you want to incorporate your new company.</p>
                         </div>
                         <div class="input-text">
                             <div class="input-div">
-                                <select>
+                                <select id="state">
                                     <option>State of formation</option>
                                     <option>Califonia</option>
                                     <option>Colorado</option>
@@ -53,7 +54,7 @@
                             <button class="next_button">Next Step</button>
                         </div>
                     </div>
-                    <div class="main ">
+                    <div class="main">
                         <small><i class="fa fa-smile-o"></i></small>
                         <div class="text">
                             <h2>Tell Us About Your company</h2>
@@ -65,25 +66,25 @@
                                 <span>Company Name</span>
                             </div>
                             <div class="input-div"> 
-                            <div class="input-div">
-                                <select>
-                                    <option>Select Type</option>
-                                    <option>Limited Liability Company</option>
-                                    <option>LLC</option>
-                                    <option>L.L.C.</option>
-                                </select>
-                            </div>
+                                <div class="input-div">
+                                    <select id="company_type" required require>
+                                        <option disabled selected>Select Type</option>
+                                        <option>Limited Liability Company</option>
+                                        <option>LLC</option>
+                                        <option>L.L.C.</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                         <div class="input-text">
                             <div class="input-div">
-                                <input type="text" required require id="website">
+                                <input type="text" required  id="website">
                                 <span>Website</span>
                             </div>
                             <div class="input-div">
                             <div class="input-div">
-                                <select>
-                                    <option>Select Industry</option>
+                                <select id="industry">
+                                    <option disabled selected>Select Industry</option>
                                     <option>Accounting and tax</option>
                                     <option>Accounting and tax preparation</option>
                                     <option>Advertising</option>
@@ -113,7 +114,7 @@
                         </div>
                         <div class="input-text">
                             <div class="input-div">
-                                <input type="text" required require>
+                                <input type="business" required require id="bussiness">
                                 <span>Business Description</span>  
                             </div>                       
                         </div>
@@ -133,15 +134,15 @@
                             <div class="individual-owner">
                                 <div class="input-text">
                                     <div class="input-div">
-                                        <input type="text" required require>
+                                        <input type="text" required require id="first_name">
                                         <span>First Name</span>
                                     </div>
                                     <div class="input-div">
-                                        <input type="text" required require>
+                                        <input type="text" required require id="last_name">
                                         <span>Last Name</span>
                                     </div>
                                     <div class="input-div">
-                                        <input type="number" required require min="0" max="100">
+                                        <input type="number" required require id="ownership" min="0" max="100">
                                         <span>Ownership Percentage</span>
                                     </div>
                                 </div>
@@ -149,11 +150,11 @@
                             <div class="company-owner" style="display: none;">
                                 <div class="input-text">           
                                     <div class="input-div">
-                                        <input type="text" required require>
+                                        <input type="text" required require id="company_name">
                                         <span>Company Name</span>
                                     </div>
                                     <div class="input-div">
-                                        <input type="number" required require min="0" max="100">
+                                        <input type="number" required require id="ownership" min="0" max="100">
                                         <span>Ownership Percentage</span>
                                     </div>
                                 </div>
@@ -192,7 +193,7 @@
                         </div>
                         <div class="input-text">
                             <div class="input-div">
-                                <input type="text" required require id="phone_number">
+                                <input type="text" required require id="phone">
                                 <span>Phone number</span>
                             </div>
                             <div class="input-div">
@@ -235,8 +236,8 @@
                         </div>
                         <div class="input-text">
                         <div class="input-div">
-                                <select>
-                                    <option>Select Country</option>
+                                <select id="country">
+                                    <option disabled selected>Select Country</option>
                                     <option>India</option>
                                     <option>France</option>
                                     <option>UK</option>
@@ -251,8 +252,8 @@
                             </div>
                             <div class="input-div"> 
                             <div class="input-div">
-                                <select>
-                                    <option>Select State/Regiom</option>
+                                <select id="region">
+                                    <option disabled selected>Select State/Regiom</option>
                                     <option>India</option>
                                     <option>France</option>
                                     <option>UK</option>
@@ -275,7 +276,7 @@
                         </div>
                         <div class="input-text">
                             <div class="input-div">
-                                <input type="text" required require id="City">
+                                <input type="text" required require id="city">
                                 <span>City</span>
                             </div>
                             <div class="input-div">
@@ -285,10 +286,10 @@
                         </div>    
                         <div class="buttons button_space">
                             <button class="back_button">Back</button>
-                            <button class="next_button">Next Step</button>
+                            <button class="next_button" onclick="saveToFirebasePage2()">Save</button>
                         </div>
                     </div>
-                    <div class="main ">
+                    <!-- <div class="main ">
                         <small><i class="fa fa-smile-o"></i></small>
                         <div class="text">
                             <h2>Create Your Account</h2>
@@ -309,9 +310,9 @@
                         
                         <div class="buttons button_space">
                             <button class="back_button">Back</button>
-                            <button class="next_button">Register</button>
+                            <button class="next_button" onclick="saveToFirebasePage2()">Register</button>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="main">
                         <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
                             <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
@@ -327,5 +328,69 @@
             </div>
         </div>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js"></script>
+
+    <script>
+
+function saveToFirebasePage2() {
+    // Check if a user is currently authenticated
+    var user = firebase.auth().currentUser;
+    if (user) {
+        var uid = user.uid;
+
+        // Capture form input values
+        const company_name = document.getElementById("company_name").value;
+        const website = document.getElementById("website").value;
+        const bussiness = document.getElementById("bussiness").value;
+        const first_name = document.getElementById("first_name").value;
+        const last_name = document.getElementById("last_name").value;
+        const ownership = document.getElementById("ownership").value;
+        const phone = document.getElementById("phone").value;
+        const email = document.getElementById("email").value;
+        const ssn = document.getElementById("ssn").value;
+        const address = document.getElementById("address").value;
+        const city = document.getElementById("city").value;
+        const company_type = document.getElementById("company_type").value;
+        const industry = document.getElementById("industry").value;
+        const country = document.getElementById("country").value;
+        const region = document.getElementById("region").value;
+        const state = document.getElementById("state").value;
+
+
+            // Reference to the Firebase database
+        const database = firebase.database();
+
+        // Create a new database entry
+        const commonDataRef = database.ref("companies").child(uid);
+
+        // Define the data to be posted
+        const postData = {
+            company_name: company_name,
+            website: website,
+            bussiness: bussiness,
+            first_name: first_name,
+            last_name: last_name,
+            ownership: ownership,
+            email: email,
+            ssn: ssn,
+            address: address,
+            city: city,
+            region: region
+        };
+
+        // Push the data to Firebase
+        commonDataRef.set(postData)
+            .then(function () {
+                console.log("Data posted to Firebase successfully.");
+            })
+            .catch(function (error) {
+                console.error("Error posting data to Firebase: " + error.message);
+            });
+    } else {
+        console.log("User is not authenticated or authentication process not complete.");
+    }
+}
+    </script>
 @endsection          
 
