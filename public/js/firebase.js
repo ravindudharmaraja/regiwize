@@ -22,6 +22,7 @@ const database = firebase.database();
 
 //setup register function
 function registerNewUser() {
+    
     // Show the loading spinner
     var loadingSpinner = document.createElement('div');
             loadingSpinner.id = 'loadingSpinner';
@@ -84,6 +85,7 @@ function registerExistingUser() {
     var loadingSpinner = document.createElement('div');
             loadingSpinner.id = 'loadingSpinner';
             document.body.appendChild(loadingSpinner);
+            
 
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;

@@ -703,6 +703,9 @@ input:focus {
     100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
+.hide-elements {
+    display: none;
+}
 
 
 
@@ -742,7 +745,7 @@ input:focus {
     .container .card .img1{
         display: flex;
         width: 200px; 
-        margin-left: 18%;    
+        /* margin-left: 18%;     */
     }
     .container .card .img{
         display: flex;
