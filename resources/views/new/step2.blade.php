@@ -19,11 +19,11 @@
                     <p class="step-number-content d-none">Add your profile piccture and let companies find youy fast.</p>
                 </div>
                 <ul class="progress-bar">
-                    <li class="active">State</li>
-                    <li>About Company</li>
-                    <li>Owners</li>
-                    <li>Personal Details</li>
-                    <li>Address Details</li>
+                    <li class="active"><p class="progress-text">State</p></li>
+                    <li><p class="progress-text">About Company</p></li>
+                    <li><p class="progress-text">Owners</p></li>
+                    <li><p class="progress-text">Personal Details</p></li>
+                    <li><p class="progress-text">Address Details</p></li>
                     <!-- <li>Create Your Account</li> -->
                 </ul>   
             </div>
